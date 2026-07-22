@@ -1,0 +1,70 @@
+name: Bug report
+description: Report reproducible incorrect behavior
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not report security vulnerabilities here. Use the process described in SECURITY.md.
+
+  - type: input
+    id: repository
+    attributes:
+      label: Repository or package
+      placeholder: api-contracts, sdk-typescript, @corelink/sdk, etc.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: 0.1.0-preview.1
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the incorrect behavior.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Configure...
+        2. Call...
+        3. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        Runtime:
+        Operating system:
+        Framework:
+        API version:
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I removed credentials, tokens, private URLs, and customer data.
+          required: true
+        - label: I searched existing issues before creating this report.
+          required: true

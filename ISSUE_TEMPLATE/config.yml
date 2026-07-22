@@ -1,0 +1,10 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/CoreLinkPlatform/.github/blob/main/SECURITY.md
+    about: Report security issues privately instead of opening a public issue.
+
+  - name: Developer documentation
+    url: https://github.com/CoreLinkPlatform/developer-docs
+    about: Read guides and integration documentation.
