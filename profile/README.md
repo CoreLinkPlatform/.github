@@ -6,7 +6,7 @@
 
 Build, integrate, and operate connected products through consistent APIs, SDKs, event contracts, and developer tools.
 
-[Developer Documentation](https://developers.corelink.example)
+[Developer Documentation](https://developers.corelinkplatform.ir)
 ·
 [API Contracts](https://github.com/CoreLinkPlatform/api-contracts)
 ·
