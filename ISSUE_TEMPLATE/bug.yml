@@ -1,0 +1,44 @@
+name: Bug report
+description: Report a reproducible defect in this repository
+title: "[Bug]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What happened, and what should have happened?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Minimal steps, request, or test that reproduces the defect.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: Release, image digest, package version, or commit SHA
+    validations:
+      required: true
+  - type: textarea
+    id: tenant_security
+    attributes:
+      label: Tenant and security impact
+      description: State tenant/isolation/auth/privacy impact, or "None observed".
+    validations:
+      required: true
+  - type: input
+    id: parent
+    attributes:
+      label: Parent Product Epic or Feature
+      placeholder: https://github.com/CoreLinkPlatform/product-planning/issues/...
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Logs, failing tests, screenshots without secrets, or other retained evidence.
