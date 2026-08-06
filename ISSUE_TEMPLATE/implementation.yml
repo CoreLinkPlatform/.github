@@ -1,0 +1,57 @@
+name: Implementation work
+description: Create a Story, Technical Task, Bug follow-up, or Chore in the owning repository
+title: "[Task]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Implementation Issues stay in the repository that executes the work and link to exactly one primary Product Epic."
+  - type: dropdown
+    id: work_type
+    attributes:
+      label: Work type
+      options:
+        - Story
+        - Technical Task
+        - Chore
+    validations:
+      required: true
+  - type: input
+    id: parent_epic
+    attributes:
+      label: Primary Product Epic
+      placeholder: https://github.com/CoreLinkPlatform/product-planning/issues/...
+    validations:
+      required: true
+  - type: textarea
+    id: background
+    attributes:
+      label: Background and goal
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope / out of scope
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      value: "- [ ] "
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Blocking Issues/decisions and cross-repository links, or "None".
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Validation and retained evidence
+      description: Tests, CI, runtime/deployment evidence expected before closure.
+    validations:
+      required: true
