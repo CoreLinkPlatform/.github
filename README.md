@@ -9,7 +9,7 @@ repositories.
 - `CODE_OF_CONDUCT.md`: community behavior policy.
 - `SECURITY.md`: vulnerability-reporting policy.
 - `GOVERNANCE.md`: project governance.
-- `ISSUE_TEMPLATE/`: bug, feature and documentation issue forms.
+- `ISSUE_TEMPLATE/`: organization-wide bug, feature, implementation, Product Epic and documentation forms.
 - `PULL_REQUEST_TEMPLATE.md`: pull-request checklist.
 - `profile/README.md`: organization profile shown on GitHub.
 
@@ -21,6 +21,6 @@ local development, copy or sync the reviewed files to the organization's
 special `.github` repository before relying on GitHub to display or enforce
 them.
 
-Platform changes must also follow the architecture rules in the `platform`
+Product Epics are owned by `product-planning`; executable Features/Tasks stay in the repository that implements them and link to exactly one primary Product Epic. Repository-local templates may narrow these defaults but must preserve that hierarchy.\n\nPlatform changes must also follow the architecture rules in the `platform`
 repository, including tenant isolation, upstream-adapter boundaries, audit and
 documentation review.
