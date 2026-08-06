@@ -1,0 +1,57 @@
+name: Product Epic
+description: Define a cross-repository product outcome (product-planning only)
+title: "[EPIC] "
+body:
+  - type: markdown
+    attributes:
+      value: "Product Epics are authoritative only in CoreLinkPlatform/product-planning. If this form is inherited in another repository, stop and create the Epic there instead."
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+    validations:
+      required: true
+  - type: textarea
+    id: values
+    attributes:
+      label: Business and technical value
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Success metrics
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope / out of scope
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance and exit criteria
+      value: "- [ ] "
+    validations:
+      required: true
+  - type: textarea
+    id: repositories
+    attributes:
+      label: Repositories and child Features
+      description: Link executable Issues in their owning repositories.
+    validations:
+      required: true
+  - type: input
+    id: milestone
+    attributes:
+      label: Product milestone
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Dependencies, risks, security/license/privacy/release impact
+    validations:
+      required: true
