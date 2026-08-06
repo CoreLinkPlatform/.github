@@ -1,0 +1,60 @@
+name: Feature
+description: Propose an executable feature owned by this repository
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: "A Feature has exactly one implementation repository and one primary Product Epic. Cross-repository outcomes belong in product-planning."
+  - type: input
+    id: parent_epic
+    attributes:
+      label: Primary Product Epic
+      placeholder: https://github.com/CoreLinkPlatform/product-planning/issues/...
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and outcome
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+    validations:
+      required: true
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of scope
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      value: "- [ ] "
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Blocking Issues/decisions and cross-repository links, or "None".
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      value: |
+        - [ ] Tests / executable evidence
+        - [ ] Contract impact reviewed
+        - [ ] Security / tenant / privacy impact reviewed
+        - [ ] Migration / rollback reviewed where applicable
+        - [ ] Observability / runbook updated where applicable
+        - [ ] Documentation / release notes updated
+        - [ ] Linked PR merged
+    validations:
+      required: true
