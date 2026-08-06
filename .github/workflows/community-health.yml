@@ -1,0 +1,31 @@
+name: Community Health CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  issue-forms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Issue form YAML
+        shell: ruby {0}
+        run: |
+          require "yaml"
+          paths = Dir["ISSUE_TEMPLATE/*.yml"].sort
+          abort "no issue forms found" if paths.empty?
+          paths.each do |path|
+            doc = YAML.safe_load(File.read(path), aliases: true)
+            abort "#{path}: root must be a mapping" unless doc.is_a?(Hash)
+            next if path.end_with?("config.yml")
+            %w[name description body].each do |key|
+              abort "#{path}: missing #{key}" unless doc[key]
+            end
+            abort "#{path}: body must be an array" unless doc["body"].is_a?(Array)
+          end
+          puts "validated #{paths.length} issue-form files"
