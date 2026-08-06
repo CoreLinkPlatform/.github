@@ -12,6 +12,7 @@ repositories.
 - `ISSUE_TEMPLATE/`: organization-wide bug, feature, implementation, Product Epic and documentation forms.
 - `PULL_REQUEST_TEMPLATE.md`: pull-request checklist.
 - `profile/README.md`: organization profile shown on GitHub.
+- `REPOSITORY_MATURITY.md`: reconciled repository roles and maturity claims.
 
 ## Usage
 
