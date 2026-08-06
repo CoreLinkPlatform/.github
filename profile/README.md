@@ -2,80 +2,96 @@
 
 # CoreLink Platform
 
-### Connected product infrastructure for devices, applications, and digital services
+### زیرساخت اتصال و یکپارچه‌سازی محصولات هوشمند
 
-Build, integrate, and operate connected products through consistent APIs, SDKs, event contracts, and developer tools.
+CoreLink یک محصول واحد با چند مرز پیاده‌سازی است: قراردادهای عمومی، runtime،
+SDKها، مستندات و ابزارها با یک مدل maturity مشترک تکامل پیدا می‌کنند.
 
-[Developer Documentation](https://developers.corelinkplatform.ir)
+[Developer Documentation](https://github.com/CoreLinkPlatform/developer-docs)
 ·
 [API Contracts](https://github.com/CoreLinkPlatform/api-contracts)
 ·
-[Examples](https://github.com/CoreLinkPlatform/examples)
+[Product Website](https://corelinkplatform.ir)
 ·
-[Report an Issue](https://github.com/CoreLinkPlatform/developer-docs/issues)
+[Repository Maturity](../REPOSITORY_MATURITY.md)
 
 </div>
 
 ---
 
-## What is CoreLink?
+## وضعیت فعلی محصول
 
-CoreLink is a developer platform for integrating connected devices, applications, and business systems.
+CoreLink هنوز یک انتشار Stable v1 نیست. مرز عمومی فعلی به‌صورت شفاف محدود است:
 
-It provides a consistent abstraction over device communication, provisioning, telemetry, commands, digital twins, events, and external integrations.
+- **API Contracts:** Alpha، با baseline فعلی `1.0.0-draft` برای Device و
+  Command و canonical event envelope.
+- **TypeScript SDK:** Prerelease Alpha.
+- **Python SDK:** Prerelease Alpha.
+- **Java SDK / CLI / Mock Server / MCP Server:** Scaffold · Planned.
+- **Core runtime:** foundation پیاده‌سازی‌شده دارد، اما تکمیل engineering
+  foundation به‌تنهایی معادل پذیرش محصول یا انتشار Stable نیست.
 
-CoreLink is designed for:
+[موجودی کامل maturity ریپوها](../REPOSITORY_MATURITY.md) مرجع این خلاصه است.
 
-- connected-product manufacturers;
-- IoT solution providers;
-- fleet and mobility platforms;
-- white-label applications;
-- enterprise integration teams;
-- backend, web, mobile, and automation developers.
+## CoreLink چه مسئله‌ای را حل می‌کند؟
 
-## Platform capabilities
+CoreLink برای ساخت محصولات متصل طراحی شده است: دستگاه و integration در مرز
+زیرساخت جذب می‌شوند و applicationها با شناسه‌ها، قراردادها و رفتارهای
+CoreLink-owned کار می‌کنند.
 
-CoreLink provides common interfaces for:
+جهت محصول شامل device lifecycle، commands، telemetry/state، events،
+integrations و تجربه‌های white-label است؛ اما هر مورد فقط وقتی «قابلیت پشتیبانی
+شده» محسوب می‌شود که contract، runtime، مستندات و release evidence همان maturity
+را تأیید کنند.
 
-- device registration and identity;
-- device provisioning and lifecycle management;
-- telemetry and state synchronization;
-- remote command execution;
-- location and mobility services;
-- media and streaming workflows;
-- event-driven integrations;
-- webhooks and external system connectivity;
-- multi-tenant and white-label applications;
-- developer and AI-assisted integrations.
+## از کجا شروع کنیم؟
 
-The public APIs describe platform capabilities rather than specific internal implementations. This allows the underlying infrastructure to evolve without forcing unnecessary changes on applications and integrations.
+| منبع | وضعیت | کاربرد فعلی |
+| --- | --- | --- |
+| [Developer docs](https://github.com/CoreLinkPlatform/developer-docs) | Alpha | مستندات نسخه‌دار و quickstart مبتنی بر contract |
+| [API contracts](https://github.com/CoreLinkPlatform/api-contracts) | Alpha · `1.0.0-draft` | مرز عمومی Device + Command و event envelope |
+| [TypeScript SDK](https://github.com/CoreLinkPlatform/sdk-typescript) | Prerelease Alpha | کلاینت generated؛ هنوز release پایدار نیست |
+| [Python SDK](https://github.com/CoreLinkPlatform/sdk-python) | Prerelease Alpha | کلاینت generated؛ هنوز release پایدار نیست |
+| [Java SDK](https://github.com/CoreLinkPlatform/sdk-java) | Scaffold · Planned | مسیر توسعه آینده؛ package پشتیبانی‌شده ندارد |
+| [CLI](https://github.com/CoreLinkPlatform/cli) | Scaffold · Planned | ابزار برنامه‌ریزی‌شده؛ installable release ندارد |
+| [Mock Server](https://github.com/CoreLinkPlatform/mock-server) | Scaffold · Planned | شبیه‌ساز برنامه‌ریزی‌شده |
+| [MCP Server](https://github.com/CoreLinkPlatform/mcp-server) | Scaffold · Planned | سطح agent/MCP برنامه‌ریزی‌شده |
 
-## Start here
+## قرارداد عمومی امروز
 
-| Resource | Description |
-|---|---|
-| [Developer documentation](https://github.com/CoreLinkPlatform/developer-docs) | Guides, concepts, tutorials, and API usage |
-| [API contracts](https://github.com/CoreLinkPlatform/api-contracts) | OpenAPI, AsyncAPI, schemas, and Postman collections |
-| [TypeScript SDK](https://github.com/CoreLinkPlatform/sdk-typescript) | SDK for Node.js, browsers, React, and Next.js |
-| [Python SDK](https://github.com/CoreLinkPlatform/sdk-python) | SDK for Python applications and automation |
-| [Java SDK](https://github.com/CoreLinkPlatform/sdk-java) | SDK for Java and Spring-based applications |
-| [Examples](https://github.com/CoreLinkPlatform/examples) | Runnable integration examples |
-| [CLI](https://github.com/CoreLinkPlatform/cli) | Command-line tools for developers and operators |
-| [MCP Server](https://github.com/CoreLinkPlatform/mcp-server) | AI and agent integrations using Model Context Protocol |
-| [Mock Server](https://github.com/CoreLinkPlatform/mock-server) | Local and CI-compatible API simulation |
+برای integration جدید، قرارداد عمومی منبع حقیقت است؛ نه ساختار provider یا
+جزئیات داخلی runtime.
 
-## Quick example
+- شناسه عمومی دستگاه: `corelink_device_id`;
+- tenant scope در مسیرهای عمومی صریح است;
+- authentication فعلی قرارداد عمومی: Bearer JWT;
+- Command create نیازمند `Idempotency-Key` است;
+- provider/connector identifiers جزئیات پیاده‌سازی‌اند.
 
-```ts
-import { CoreLink } from "@corelink/sdk";
+Quickstart و referenceهای نسخه‌دار در
+[`developer-docs`](https://github.com/CoreLinkPlatform/developer-docs) قرار
+دارند.
 
-const corelink = new CoreLink({
-  baseUrl: process.env.CORELINK_API_URL!,
-  accessToken: async () => process.env.CORELINK_ACCESS_TOKEN!,
-});
+## یک محصول، چند repository
 
-const devices = await corelink.devices.list({
-  tenantId: "tenant_id",
-});
+Product hierarchy، milestone gates و تصمیم‌های cross-repository در
+[`product-planning`](https://github.com/CoreLinkPlatform/product-planning)
+مدیریت می‌شوند. هر repository فقط implementation/evidence مرز خودش را نگه
+می‌دارد.
 
-console.log(devices.items);
+وضعیت یک repository را از public بودن، تعداد فایل‌ها یا وجود یک scaffold نتیجه
+نمی‌گیریم. واژگان مشترک maturity عبارت‌اند از **Scaffold, Experimental, Alpha,
+Beta, Stable, Deprecated, Planned**.
+
+## اعتماد، امنیت و مشارکت
+
+- آسیب‌پذیری امنیتی را طبق [Security Policy](../SECURITY.md) گزارش کنید.
+- تغییرات کد و مستندات باید [Contribution Guide](../CONTRIBUTING.md) را رعایت کنند.
+- Issueهای اجرایی از [organization Issue forms](../ISSUE_TEMPLATE/) استفاده
+  می‌کنند و به Product Epic مربوط لینک می‌شوند.
+- وضعیت محصول یا package را قبل از استفاده production از repository مالک و
+  [maturity inventory](../REPOSITORY_MATURITY.md) بررسی کنید.
+
+---
+
+CoreLink Platform · one product, explicit maturity, evidence before claims.
