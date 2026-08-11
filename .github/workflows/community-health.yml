@@ -29,3 +29,22 @@ jobs:
             abort "#{path}: body must be an array" unless doc["body"].is_a?(Array)
           end
           puts "validated #{paths.length} issue-form files"
+
+  profile-maturity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate organization profile maturity claims
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s profile/README.md
+          test -s REPOSITORY_MATURITY.md
+          grep -Fq '1.0.0-draft' profile/README.md
+          grep -Fq 'Prerelease Alpha' profile/README.md
+          grep -Fq 'Scaffold · Planned' profile/README.md
+          grep -Fq 'CoreLinkPlatform/platform' REPOSITORY_MATURITY.md
+          if grep -Fq 'CoreLinkPlatform/examples' profile/README.md; then
+            echo "organization profile references the unavailable examples repository" >&2
+            exit 1
+          fi
