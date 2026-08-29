@@ -15,9 +15,9 @@ Maturity vocabulary: **Scaffold, Experimental, Alpha, Beta, Stable, Deprecated, 
 | [`Control`](https://github.com/CoreLinkPlatform/Control) | Private platform control plane / operator UI | Alpha | Internal privileged operations surface for platform overview, tenants, devices, managed connections and diagnostics. It is not a tenant/customer portal and must remain fail-closed to non-platform actors. |
 | [`api-contracts`](https://github.com/CoreLinkPlatform/api-contracts) | Public/admin/internal API and event contracts | Alpha · `1.0.0-draft` public boundary | Device + Command public slice and canonical event envelope are reviewable; broader v1 contract work is ongoing. |
 | [`developer-docs`](https://github.com/CoreLinkPlatform/developer-docs) | Versioned developer documentation | Alpha | Versioned v1 IA exists; quickstart and broader guides are being reconciled with supported contract/runtime maturity. |
-| [`sdk-typescript`](https://github.com/CoreLinkPlatform/sdk-typescript) | TypeScript client | Prerelease Alpha | Generated client exists; supported publication/conformance gates are still open. |
-| [`sdk-python`](https://github.com/CoreLinkPlatform/sdk-python) | Python client | Prerelease Alpha | Generated client exists; supported publication/conformance and license-policy gates are still open. |
-| [`sdk-java`](https://github.com/CoreLinkPlatform/sdk-java) | Java client | Scaffold · Planned | No supported Java source/package/build baseline exists yet. |
+| [`sdk-typescript`](https://github.com/CoreLinkPlatform/sdk-typescript) | TypeScript client | Prerelease Alpha | Generated client exists with immutable tagged-contract provenance and successful Blacksmith regeneration/build; supported package/conformance gates remain open. |
+| [`sdk-python`](https://github.com/CoreLinkPlatform/sdk-python) | Python client | Prerelease Alpha | Generated client exists with immutable tagged-contract provenance and successful Blacksmith regeneration/compile; supported publication/conformance and license-policy gates remain open. |
+| [`sdk-java`](https://github.com/CoreLinkPlatform/sdk-java) | Java client | Experimental · Generated baseline | Java 17+, coordinates and reproducible OpenAPI generation/build are defined and pass Blacksmith CI; no supported public Maven artifact or Stable compatibility claim exists yet. |
 | [`cli`](https://github.com/CoreLinkPlatform/cli) | Developer/operator CLI | Scaffold · Planned | No installable supported CLI exists yet. |
 | [`mock-server`](https://github.com/CoreLinkPlatform/mock-server) | Local/CI contract simulation | Scaffold · Planned | No supported mock runtime/package exists yet; it must consume reviewed versioned contracts. |
 | [`mcp-server`](https://github.com/CoreLinkPlatform/mcp-server) | Agent/MCP integration | Scaffold · Planned | No supported MCP package/tool surface exists yet; security and read-only boundaries are backlog-gated. |
@@ -43,10 +43,11 @@ The public developer boundary remains intentionally narrower than the private ru
 
 - public API contract: Device + Command on `1.0.0-draft`;
 - public event contract: canonical event envelope;
-- TypeScript/Python clients: prerelease Alpha;
+- TypeScript/Python clients: prerelease Alpha with immutable regeneration provenance;
+- Java client: Experimental generated baseline; no supported artifact channel yet;
 - Console: Alpha hosted application;
 - Control: private Alpha operator surface and not a public developer API contract;
-- Java/CLI/mock/MCP: Scaffold/Planned;
+- CLI/mock/MCP: Scaffold/Planned;
 - telemetry/location, partner operations, usage/billing, automation/media and other surfaces require version-identifiable contract/runtime/release evidence before Stable support claims.
 
 ## Ownership and review
