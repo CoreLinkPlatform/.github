@@ -24,8 +24,9 @@ CoreLink هنوز Stable v1 نیست.
 - **Console:** Alpha؛ سطح tenant/customer/partner/reseller با OIDC/BFF و جریان‌های عملیاتی CoreLink-owned.
 - **Control:** Alpha و Private؛ control-plane داخلی برای platform operators، tenants/devices/connections/diagnostics و خارج از قرارداد tenant-facing.
 - **API Contracts:** Alpha، baseline عمومی فعلی `1.0.0-draft`.
-- **TypeScript / Python SDKs:** Prerelease Alpha.
-- **Java SDK / CLI / Mock Server / MCP Server:** Scaffold · Planned.
+- **TypeScript / Python SDKs:** Prerelease Alpha با tagged-contract provenance و regeneration CI.
+- **Java SDK:** Experimental · Generated Baseline؛ Java 17+ و generation/build قابل تکرار دارد، اما artifact پشتیبانی‌شده عمومی هنوز منتشر نشده است.
+- **CLI / Mock Server / MCP Server:** Scaffold · Planned.
 
 [موجودی کامل maturity](../REPOSITORY_MATURITY.md) مرجع این خلاصه است.
 
@@ -48,9 +49,9 @@ CoreLink برای ساخت و بهره‌برداری محصولات متصل ط
 | [Developer docs](https://github.com/CoreLinkPlatform/developer-docs) | Alpha | مستندات نسخه‌دار، quickstart و راهنماهای توسعه‌دهنده |
 | [API contracts](https://github.com/CoreLinkPlatform/api-contracts) | Alpha · `1.0.0-draft` | مرز machine-readable عمومی/admin/internal و event schemas |
 | [Console](https://github.com/CoreLinkPlatform/Console) | Alpha | تجربه hosted SaaS برای tenant/assets/telemetry/alerts/usage/integrations |
-| [TypeScript SDK](https://github.com/CoreLinkPlatform/sdk-typescript) | Prerelease Alpha | generated client؛ هنوز Stable package نیست |
-| [Python SDK](https://github.com/CoreLinkPlatform/sdk-python) | Prerelease Alpha | generated client؛ هنوز Stable package نیست |
-| [Java SDK](https://github.com/CoreLinkPlatform/sdk-java) | Scaffold · Planned | package پشتیبانی‌شده ندارد |
+| [TypeScript SDK](https://github.com/CoreLinkPlatform/sdk-typescript) | Prerelease Alpha | generated client با provenance/CI؛ هنوز Stable package نیست |
+| [Python SDK](https://github.com/CoreLinkPlatform/sdk-python) | Prerelease Alpha | generated client با provenance/CI؛ هنوز Stable package نیست |
+| [Java SDK](https://github.com/CoreLinkPlatform/sdk-java) | Experimental | generated Java 17+ baseline و Blacksmith build؛ هنوز supported artifact ندارد |
 | [CLI](https://github.com/CoreLinkPlatform/cli) | Scaffold · Planned | installable release ندارد |
 | [Mock Server](https://github.com/CoreLinkPlatform/mock-server) | Scaffold · Planned | contract-driven simulation در backlog |
 | [MCP Server](https://github.com/CoreLinkPlatform/mcp-server) | Scaffold · Planned | سطح MCP امن و tenant-scoped در backlog |
