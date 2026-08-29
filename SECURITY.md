@@ -2,57 +2,51 @@
 
 ## Reporting a vulnerability
 
-Do not report security vulnerabilities through public GitHub issues, discussions, or pull requests.
+Do **not** report security vulnerabilities through public GitHub issues, discussions, pull requests, or comments.
 
-Report suspected vulnerabilities privately by email
+Use GitHub's private vulnerability reporting / Security Advisory flow on the affected CoreLink repository when that private reporting option is available. If a repository does not expose a private reporting flow, contact a CoreLink maintainer through an existing private organizational channel and identify the affected repository so a private advisory can be opened.
 
 Include, where possible:
 
-- affected repository and version;
-- vulnerability description;
-- reproduction steps;
+- affected repository and version or commit;
+- vulnerability description and security boundary affected;
+- minimal reproduction steps;
 - expected and actual behavior;
 - potential impact;
-- suggested mitigation;
-- relevant logs or screenshots with sensitive information removed.
+- suggested mitigation, if known;
+- sanitized logs or screenshots.
 
-Do not include:
+Do not include unnecessary secrets, access tokens, client secrets, private keys, customer data, production credentials, or personally identifiable information.
 
-- access tokens;
-- client secrets;
-- private keys;
-- customer data;
-- production credentials;
-- unnecessary personally identifiable information.
-- Response process
+## Response process
 
-## We aim to:
+We aim to:
 
-acknowledge reports within 5 business days;
-investigate and assess severity;
-coordinate remediation and disclosure;
-publish security advisories when appropriate.
+- acknowledge a private report within 5 business days;
+- investigate impact and affected versions;
+- coordinate remediation and disclosure;
+- publish a GitHub Security Advisory when appropriate;
+- update supported release and mitigation guidance.
 
-These targets are not contractual service-level guarantees.
+These targets are operational goals, not contractual service-level guarantees.
 
 ## Supported versions
 
-Until the first stable release, only the latest published preview version is evaluated for security updates.
-
-After stable releases begin, supported versions will be listed here.
+Until the first Stable release, only the latest published preview release is evaluated for security updates unless a release note explicitly states otherwise. Stable-version support windows will be documented when Stable releases begin.
 
 ## Scope
 
 Security reports may include:
 
-authentication and authorization bypass;
-tenant isolation failures;
-credential exposure;
-command execution vulnerabilities;
-webhook signature bypass;
-request forgery;
-unsafe SDK behavior;
-dependency vulnerabilities with demonstrated impact;
-MCP tool authorization or data-exposure issues.
+- authentication or authorization bypass;
+- tenant-isolation or RLS failures;
+- credential or secret exposure;
+- command-execution vulnerabilities;
+- webhook signature or replay-control bypass;
+- request forgery or unsafe callback behavior;
+- unsafe SDK/CLI credential handling;
+- dependency vulnerabilities with demonstrated product impact;
+- MCP authorization, consent, or data-exposure failures;
+- release/supply-chain provenance weaknesses with exploitable impact.
 
-General support requests and feature requests should use the repository issue tracker.
+General support requests, implementation questions, and feature requests should use the appropriate repository issue tracker or `SUPPORT.md`.
