@@ -2,6 +2,11 @@
 
 # CoreLink Platform
 
+[![Product maturity: Pre-Stable](https://img.shields.io/badge/product%20maturity-pre--stable-orange)](../REPOSITORY_MATURITY.md)
+[![Public contract: 1.0.0-draft](https://img.shields.io/badge/public%20contract-1.0.0--draft-blue)](https://github.com/CoreLinkPlatform/api-contracts)
+[![Website](https://github.com/CoreLinkPlatform/website/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://corelinkplatform.ir)
+[![Developer docs](https://github.com/CoreLinkPlatform/developer-docs/actions/workflows/documentation.yml/badge.svg?branch=main)](https://github.com/CoreLinkPlatform/developer-docs)
+
 ### زیرساخت اتصال و یکپارچه‌سازی محصولات هوشمند
 
 CoreLink یک محصول واحد با چند مرز پیاده‌سازی و انتشار است: runtime، Console، Control، قراردادهای عمومی، SDKها، مستندات و ابزارها با یک مدل maturity مشترک تکامل پیدا می‌کنند.
