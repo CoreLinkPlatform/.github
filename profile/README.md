@@ -1,6 +1,6 @@
 <div align="center">
 
-# CoreLink Platform
+# Core Platform
 
 [![Product maturity: Pre-Stable](https://img.shields.io/badge/product%20maturity-pre--stable-orange)](../REPOSITORY_MATURITY.md)
 [![Public contract: 1.0.0-draft](https://img.shields.io/badge/public%20contract-1.0.0--draft-blue)](https://github.com/CoreLinkPlatform/api-contracts)
